@@ -46,6 +46,7 @@ class Admin extends CI_Controller{
         $data['title'] = 'Profile | PVSol';
         $data['content'] = 'admin/user_profile';
         $data['profile'] = $this->admin_model->get_user_profile($id);
+        $data['users'] = $this->admin_model->get_users();
         $this->load->view('components/template', $data);
     }
     // Get pending tasks.

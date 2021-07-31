@@ -69,7 +69,8 @@ class Admin_model extends CI_Model{
       $this->db->from('tasks');
       $this->db->join('users', 'tasks.assignee = users.id', 'left');
       $this->db->where('tasks.assignee', $id);
-      return $this->db->get()->row();
+      $this->db->group_by('tasks.id');
+      return $this->db->get()->result();
     }
 }
 

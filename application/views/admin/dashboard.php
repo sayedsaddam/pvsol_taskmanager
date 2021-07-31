@@ -47,7 +47,7 @@
                 <?php if(!empty($tasks)): $serial = 1; foreach($tasks as $task): ?>
                 <tr>
                   <th scope="row"><?= $serial++; ?></th>
-                  <td><a href="<?= base_url('admin/user_profile/'.$task->user_id); ?>" class="text-info"><?= ucfirst($task->username); ?></a></td>
+                  <td><a href="<?= base_url('admin/user_profile/'.$task->user_id); ?>" class="text-info" title="Click to view all user activity..."><?= ucfirst($task->username); ?></a></td>
                   <td><?= ucfirst($task->task_description); ?></td>
                   <td><?= date('M d, Y', strtotime($task->due_date)); ?></td>
                   <td><span class="badge badge-secondary"><?php if($task->priority == 1){ echo 'Low'; }elseif($task->priority == 2){ echo 'Medium'; }elseif($task->priority == 3){ echo 'High'; } ?></span></td>
