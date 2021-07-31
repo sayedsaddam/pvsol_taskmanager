@@ -16,7 +16,7 @@ class Admin extends CI_Controller{
     // Index method will load the page.
     public function index(){
     	$data['title'] = 'Dashboard | PVSol';
-    	$data['content'] = 'dashboard';
+    	$data['content'] = 'admin/dashboard';
         $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks();
         $data['pending_tasks'] = $this->admin_model->count_pending_tasks();
@@ -44,9 +44,16 @@ class Admin extends CI_Controller{
     // Get user profile > with tasks assigned, pending, completed, in progress with percentage.
     public function user_profile($id){
         $data['title'] = 'Profile | PVSol';
-        $data['content'] = 'user_profile';
+        $data['content'] = 'admin/user_profile';
         $data['profile'] = $this->admin_model->get_user_profile($id);
         $this->load->view('components/template', $data);
+    }
+    // Get pending tasks.
+    public function tasks(){
+        $data['title'] = 'Pending Tasks | PVSol';
+        $data['content'] = '';
+        $data['tasks '] = $this->admin_model->get_assigned_tasks();
+        
     }
 }
 

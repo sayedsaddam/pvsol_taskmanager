@@ -85,4 +85,5 @@
             </section>
         </div>
     </div>
+    <hr />
 </div>

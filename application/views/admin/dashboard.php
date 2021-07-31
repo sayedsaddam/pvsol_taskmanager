@@ -51,7 +51,7 @@
                   <td><?= ucfirst($task->task_description); ?></td>
                   <td><?= date('M d, Y', strtotime($task->due_date)); ?></td>
                   <td><span class="badge badge-secondary"><?php if($task->priority == 1){ echo 'Low'; }elseif($task->priority == 2){ echo 'Medium'; }elseif($task->priority == 3){ echo 'High'; } ?></span></td>
-                  <td><span class="badge badge-warning badge-pill"><?php if($task->status == 0){ echo 'Pending'; }else{ echo 'Completed'; } ?></span></td>
+                  <td><span class="badge badge-warning badge-pill"><?php if($task->status == 0){ echo 'Pending'; }elseif($task->status == 1){ echo 'In Progress'; }else{ echo 'Completed'; } ?></span></td>
                 </tr>
                 <?php endforeach; endif; ?>
               </tbody>
@@ -74,7 +74,7 @@
           <div class="card-body">
             <ul class="list-group">
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="">Pending</a>
+                <a href="<?= base_url('admin/pending_tasks'); ?>">Pending</a>
                 <span class="badge badge-warning badge-pill"><?= $pending_tasks; ?></span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
