@@ -22,6 +22,23 @@ class Admin_model extends CI_Model{
         return false;
       }
     }
+    // Get tasks assigned to users / staff.
+    public function get_assigned_tasks(){
+      $this->db->select('tasks.id,
+                          tasks.assignee,
+                          tasks.assigner,
+                          tasks.due_date,
+                          tasks.priority,
+                          tasks.task_description,
+                          tasks.status,
+                          tasks.created_at,
+                          users.id as user_id,
+                          users.username');
+      $this->db->from('tasks');
+      $this->db->join('users', 'tasks.assignee = users.id', 'left');
+      $this->db->order_by('created_at', 'DESC');
+      return $this->db->get()->result();
+    }
 }
 
 
