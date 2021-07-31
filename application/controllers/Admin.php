@@ -19,6 +19,9 @@ class Admin extends CI_Controller{
     	$data['content'] = 'dashboard';
         $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks();
+        $data['pending_tasks'] = $this->admin_model->count_pending_tasks();
+        $data['progress_tasks'] = $this->admin_model->count_progress_tasks();
+        $data['completed_tasks'] = $this->admin_model->count_completed_tasks();
     	$this->load->view('components/template', $data);
     }
     // Assign task to user / employee.
@@ -38,10 +41,11 @@ class Admin extends CI_Controller{
             redirect($_SERVER['HTTP_REFERER']);
         }
     }
-    // Todo list
-    public function todo_list(){
-        $data['title'] = 'TODO List | PVSol';
-        $data['content'] = 'todo_list';
+    // Get user profile > with tasks assigned, pending, completed, in progress with percentage.
+    public function user_profile($id){
+        $data['title'] = 'Profile | PVSol';
+        $data['content'] = 'user_profile';
+        $data['profile'] = $this->admin_model->get_user_profile($id);
         $this->load->view('components/template', $data);
     }
 }
