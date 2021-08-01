@@ -117,8 +117,12 @@
                   <th scope="row"><?= $serial++; ?></th>
                   <td><?= ucfirst($task->task_description); ?></td>
                   <td><?= date('M d, Y', strtotime($task->due_date)); ?></td>
-                  <td><span class="badge badge-secondary"><?php if($task->priority == 1){ echo 'Low'; }elseif($task->priority == 2){ echo 'Medium'; }elseif($task->priority == 3){ echo 'High'; } ?></span></td>
-                  <td><?php if($task->status == 0){ echo '<span class="badge badge-warning badge-pill">Pending</span>'; }elseif($task->status == 1){ echo '<span class="badge badge-secondary badge-pill">In Progress</span>'; }else{ echo '<span class="badge badge-success badge-pill">Completed</span>'; } ?></td>
+                  <td>
+                    <?php if($task->priority == 1){ echo '<span class="badge badge-info">Low</span>'; }elseif($task->priority == 2){ echo '<span class="badge badge-primary">Medium</span>'; }elseif($task->priority == 3){ echo '<span class="badge badge-danger">High</span>'; } ?>
+                  </td>
+                  <td>
+                    <?php if($task->status == 0){ echo '<span class="badge badge-warning badge-pill">Pending</span>'; }elseif($task->status == 1){ echo '<span class="badge badge-secondary badge-pill">In Progress</span>'; }else{ echo '<span class="badge badge-success badge-pill">Completed</span>'; } ?>
+                  </td>
                   <td><?= date('M d, Y', strtotime($task->created_at)); ?></td>
                 </tr>
                 <?php endif; endforeach; endif; ?>
