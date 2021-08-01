@@ -14,11 +14,15 @@ class Admin extends CI_Controller{
         }
     }
     // Index method will load the page.
-    public function index(){
+    public function index($offset = NULL){
+        $limit = 10;
+        if(!empty($offset)){
+            $this->uri->segment(3);
+        }
     	$data['title'] = 'Dashboard | PVSol';
     	$data['content'] = 'admin/dashboard';
         $data['users'] = $this->admin_model->get_users();
-        $data['tasks'] = $this->admin_model->get_assigned_tasks();
+        $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
         $data['pending_tasks'] = $this->admin_model->count_pending_tasks();
         $data['progress_tasks'] = $this->admin_model->count_progress_tasks();
         $data['completed_tasks'] = $this->admin_model->count_completed_tasks();
@@ -42,19 +46,50 @@ class Admin extends CI_Controller{
         }
     }
     // Get user profile > with tasks assigned, pending, completed, in progress with percentage.
-    public function user_profile($id){
+    public function user_profile($id, $offset = NULL){
+        $limit = 10;
+        if(!empty($offset)){
+            $this->uri->segment(3);
+        }
         $data['title'] = 'Profile | PVSol';
         $data['content'] = 'admin/user_profile';
         $data['profile'] = $this->admin_model->get_user_profile($id);
         $data['users'] = $this->admin_model->get_users();
+        $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
         $this->load->view('components/template', $data);
     }
     // Get pending tasks.
-    public function tasks(){
+    public function pending_tasks($offset = NULL){
+        $limit = 10;
+        if(!empty($offset)){
+            $this->uri->segment(3);
+        }
         $data['title'] = 'Pending Tasks | PVSol';
-        $data['content'] = '';
-        $data['tasks '] = $this->admin_model->get_assigned_tasks();
-        
+        $data['content'] = 'admin/pending_tasks';
+        $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
+        $this->load->view('components/template', $data);
+    }
+    // Get in progress tasks.
+    public function progress_tasks($offset = NULL){
+        $limit = 10;
+        if(!empty($offset)){
+            $this->uri->segment(3);
+        }
+        $data['title'] = 'In Progress Tasks | PVSol';
+        $data['content'] = 'admin/progress_tasks';
+        $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
+        $this->load->view('components/template', $data);
+    }
+    // Get completed tasks.
+    public function completed_tasks($offset = NULL){
+        $limit = 10;
+        if(!empty($offset)){
+            $this->uri->segment(3);
+        }
+        $data['title'] = 'Completed Tasks | PVSol';
+        $data['content'] = 'admin/completed_tasks';
+        $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
+        $this->load->view('components/template', $data);
     }
 }
 

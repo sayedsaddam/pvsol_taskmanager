@@ -32,11 +32,11 @@
             </div>
           </div>
           <div class="card-body">
-            <table class="table table-hover table-bordered table-sm table-responsive-md btn-table">
-              <thead>
+            <table class="table table-striped table-bordered table-sm table-responsive-md btn-table">
+              <thead class="table-dark">
                 <tr>
                   <th>#</th>
-                  <th>Employee Name</th>
+                  <th>Assignee</th>
                   <th>Task Description</th>
                   <th>Due Date</th>
                   <th>Priority</th>
@@ -47,11 +47,17 @@
                 <?php if(!empty($tasks)): $serial = 1; foreach($tasks as $task): ?>
                 <tr>
                   <th scope="row"><?= $serial++; ?></th>
-                  <td><a href="<?= base_url('admin/user_profile/'.$task->user_id); ?>" class="text-info" title="Click to view all user activity..."><?= ucfirst($task->username); ?></a></td>
-                  <td><?= ucfirst($task->task_description); ?></td>
+                  <td>
+                    <a href="<?= base_url('admin/user_profile/'.$task->user_id); ?>" class="text-info" title="Click to view all user activity..."><?php if($task->user_id == $this->session->userdata('id')){ echo 'Own'; }else{ echo ucfirst($task->username); } ?></a>
+                  </td>
+                  <td title="<?= $task->task_description; ?>"><?= substr($task->task_description, 0, 20).' &hellip;'; ?></td>
                   <td><?= date('M d, Y', strtotime($task->due_date)); ?></td>
-                  <td><span class="badge badge-secondary"><?php if($task->priority == 1){ echo 'Low'; }elseif($task->priority == 2){ echo 'Medium'; }elseif($task->priority == 3){ echo 'High'; } ?></span></td>
-                  <td><span class="badge badge-warning badge-pill"><?php if($task->status == 0){ echo 'Pending'; }elseif($task->status == 1){ echo 'In Progress'; }else{ echo 'Completed'; } ?></span></td>
+                  <td>
+                    <?php if($task->priority == 1){ echo '<span class="badge badge-info">Low</span>'; }elseif($task->priority == 2){ echo '<span class="badge badge-primary">Medium</span>'; }elseif($task->priority == 3){ echo '<span class="badge badge-danger">High</span>'; } ?>
+                  </td>
+                  <td>
+                    <?php if($task->status == 0){ echo '<span class="badge badge-warning badge-pill">Pending</span>'; }elseif($task->status == 1){ echo '<span class="badge badge-secondary badge-pill">In Progress</span>'; }else{ echo '<span class="badge badge-success badge-pill">Completed</span>'; } ?>
+                  </td>
                 </tr>
                 <?php endforeach; endif; ?>
               </tbody>
@@ -78,11 +84,11 @@
                 <span class="badge badge-warning badge-pill"><?= $pending_tasks; ?></span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="">Progress</a>
+                <a href="<?= base_url('admin/progress_tasks'); ?>">Progress</a>
                 <span class="badge badge-secondary badge-pill"><?= $progress_tasks; ?></span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="">Completed</a>
+                <a href="<?= base_url('admin/completed_tasks'); ?>">Completed</a>
                 <span class="badge badge-success badge-pill"><?= $completed_tasks; ?></span>
               </li>
             </ul>

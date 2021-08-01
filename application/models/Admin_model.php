@@ -35,7 +35,7 @@ class Admin_model extends CI_Model{
       }
     }
     // Get tasks assigned to users / staff > dashboard.
-    public function get_assigned_tasks(){
+    public function get_assigned_tasks($limit, $offset){
       $this->db->select('tasks.id,
                           tasks.assignee,
                           tasks.assigner,
@@ -49,6 +49,7 @@ class Admin_model extends CI_Model{
       $this->db->from('tasks');
       $this->db->join('users', 'tasks.assignee = users.id', 'left');
       $this->db->order_by('created_at', 'DESC');
+      $this->db->limit($limit, $offset);
       return $this->db->get()->result();
     }
     // Get user profile > with tasks assigned, pending, completed, in progress with percentage > user profile.
@@ -69,10 +70,6 @@ class Admin_model extends CI_Model{
       $this->db->from('tasks');
       $this->db->join('users', 'tasks.assignee = users.id', 'left');
       $this->db->where('tasks.assignee', $id);
-      $this->db->group_by('tasks.id');
-      return $this->db->get()->result();
+      return $this->db->get()->row();
     }
 }
-
-
-?>

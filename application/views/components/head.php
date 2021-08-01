@@ -51,7 +51,7 @@
   <!--/.Navbar -->
   <div class="jumbotron jumbotron-fluid aqua-gradient text-light">
       <div class="container">
-          <h1 class="display-4">Progressive Ventures</h1>
-          <p>PVSol (Pvt.) Ltd. - Solar Solutions Providers.</p>
+          <h1 class="font-weight-bolder display-4">Progressive Ventures</h1>
+          <h4>PVSol (Pvt.) Ltd. &raquo; Solar Solutions Providers.</h4>
       </div>
   </div>
