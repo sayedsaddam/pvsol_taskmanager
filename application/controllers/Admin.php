@@ -66,6 +66,7 @@ class Admin extends CI_Controller{
         }
         $data['title'] = 'Pending Tasks | PVSol';
         $data['content'] = 'admin/pending_tasks';
+        $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
         $this->load->view('components/template', $data);
     }
@@ -77,6 +78,7 @@ class Admin extends CI_Controller{
         }
         $data['title'] = 'In Progress Tasks | PVSol';
         $data['content'] = 'admin/progress_tasks';
+        $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
         $this->load->view('components/template', $data);
     }
@@ -88,6 +90,7 @@ class Admin extends CI_Controller{
         }
         $data['title'] = 'Completed Tasks | PVSol';
         $data['content'] = 'admin/completed_tasks';
+        $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
         $this->load->view('components/template', $data);
     }

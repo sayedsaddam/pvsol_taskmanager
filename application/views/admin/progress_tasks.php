@@ -63,7 +63,7 @@
         <form action="<?= base_url('admin/assign_task'); ?>" method="post">
           <div class="md-form mb-4">
             <select name="emp_id" class="browser-default custom-select">
-              <option value="" disabled selected>--select employee--</option>
+              <option value="" disabled selected>--Assignee--</option>
               <?php if(!empty($users)): foreach($users as $user): ?>
                 <option value="<?= $user->id; ?>"><?= ucfirst($user->username); ?></option>
               <?php endforeach; endif; ?>
@@ -74,7 +74,7 @@
           </div>
           <div class="md-form mb-4">
             <select name="priority" class="browser-default custom-select">
-              <option value="" disabled selected>Priority</option>
+              <option value="" disabled selected>--Priority--</option>
               <option value="1">Low</option>
               <option value="2">Medium</option>
               <option value="3">High</option>
