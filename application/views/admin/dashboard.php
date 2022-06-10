@@ -37,7 +37,7 @@
                 <tr>
                   <th>#</th>
                   <th>Assignee</th>
-                  <th>Task Description</th>
+                  <th>Task Title</th>
                   <th>Due Date</th>
                   <th>Priority</th>
                   <th>Status</th>
@@ -50,7 +50,12 @@
                   <td>
                     <a href="<?= base_url('admin/user_profile/'.$task->user_id); ?>" class="text-info" title="Click to view all user activity..."><?php if($task->user_id == $this->session->userdata('id')){ echo 'Own'; }else{ echo ucfirst($task->username); } ?></a>
                   </td>
-                  <td title="<?= $task->task_description; ?>"><?= substr($task->task_description, 0, 20).' &hellip;'; ?></td>
+                  <td title="<?= $task->task_description; ?>">
+                    <details>
+                      <summary><?= $task->task_title; ?></summary>
+                      <p><?= $task->task_description; ?></p>
+                    </details>
+                  </td>
                   <td><?= date('M d, Y', strtotime($task->due_date)); ?></td>
                   <td>
                     <?php if($task->priority == 1){ echo '<span class="badge badge-info">Low</span>'; }elseif($task->priority == 2){ echo '<span class="badge badge-primary">Medium</span>'; }elseif($task->priority == 3){ echo '<span class="badge badge-danger">High</span>'; } ?>
@@ -113,7 +118,7 @@
         <form action="<?= base_url('admin/assign_task'); ?>" method="post">
           <div class="md-form mb-4">
             <select name="emp_id" class="browser-default custom-select">
-              <option value="" disabled selected>--Assignee--</option>
+              <option value="" disabled selected>-- Assignee --</option>
               <?php if(!empty($users)): foreach($users as $user): ?>
                 <option value="<?= $user->id; ?>"><?= ucfirst($user->username); ?></option>
               <?php endforeach; endif; ?>
@@ -125,13 +130,16 @@
           <div class="md-form mb-4">
             <select name="priority" class="browser-default custom-select">
               <option value="" disabled selected>--Priority--</option>
-              <option value="1">Low</option>
-              <option value="2">Medium</option>
-              <option value="3">High</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
             </select>
           </div>
           <div class="md-form mb-4">
-            <textarea name="task_description" id="form8" class="md-textarea form-control" rows="3"></textarea>
+            <input type="text" name="task_title" id="form8" class="form-control" placeholder="Task title...">
+          </div>
+          <div class="md-form mb-4">
+            <textarea name="task_description" id="form8" class="md-textarea form-control" rows="3" placeholder="Task description..."></textarea>
           </div>
           <div class="md-form mb-5">
             <button type="submit" class="btn btn-primary btn-block">Save changes</button>

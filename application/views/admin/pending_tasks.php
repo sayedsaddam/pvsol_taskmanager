@@ -35,7 +35,7 @@
                   <td><?= ucfirst($task->task_description); ?></td>
                   <td><?= date('M d, Y', strtotime($task->due_date)); ?></td>
                   <td>
-                    <?php if($task->priority == 1){ echo '<span class="badge badge-info">Low</span>'; }elseif($task->priority == 2){ echo '<span class="badge badge-primary">Medium</span>'; }elseif($task->priority == 3){ echo '<span class="badge badge-danger">High</span>'; } ?>
+                    <?php if($task->priority == 'low'){ echo '<span class="badge badge-info">Low</span>'; }elseif($task->priority == 'medium'){ echo '<span class="badge badge-primary">Medium</span>'; }elseif($task->priority == 'high'){ echo '<span class="badge badge-danger">High</span>'; } ?>
                   </td>
                   <td><span class="badge badge-warning badge-pill">Pending</span></td>
                   <td><?= date('M d, Y', strtotime($task->created_at)); ?></td>

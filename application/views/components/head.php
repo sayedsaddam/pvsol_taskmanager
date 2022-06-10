@@ -33,7 +33,17 @@
           <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-          <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('admin/pending_tasks'); ?>">Pending</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('admin/progress_tasks'); ?>">Progress</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('admin/completed_tasks'); ?>">Completed</a>
+          </li>
+        </ul>
           <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

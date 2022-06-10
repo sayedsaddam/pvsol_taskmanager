@@ -66,7 +66,7 @@ class Login extends CI_Controller
       }
       if($user_signin == TRUE ){
         $this->session->set_userdata(array('id' => $id, 'username' => $username, 'user_role' => $user_role));
-        if($this->session->userdata('user_role') == 'admin'){
+        if($this->session->userdata('user_role') == 'admin'){ // assign tasks to him/herself or other staff.
           redirect('admin');
         }elseif($this->session->userdata('user_role') == 'staff'){
           echo "I am an Employee.";
