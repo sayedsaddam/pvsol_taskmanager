@@ -18,12 +18,14 @@
   font-family: 'openSans';
   src: url('../fonts/Open_Sans/OpenSans-Regular.ttf');
 }
-body {
-  font-family: 'roboto';
-  background-color: #f1f3f5;
+html,
+body,
+header,
+.view {
+  height: 100%;
 }
 ::selection {
-  background-color: #42324e;
+  background-color: #0b0112;
   color: #fff;
 }
 .marg {
