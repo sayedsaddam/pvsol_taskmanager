@@ -18,12 +18,17 @@
   font-family: 'openSans';
   src: url('../fonts/Open_Sans/OpenSans-Regular.ttf');
 }
+/* Custom CSS */
 html,
 body,
 header,
 .view {
   height: 100%;
 }
+.rgba-gradient {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+}
+/* Custom CSS */
 ::selection {
   background-color: #0b0112;
   color: #fff;

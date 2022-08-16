@@ -12,4 +12,11 @@ class Frontend extends CI_Controller{
       $data['content'] = 'frontend/home';
       $this->load->view('frontend/commons/template', $data);
    }
+   // php quiz
+   public function php_quiz(){
+      $daily = ($coding = 1) + 1; 
+      $coding++;
+      $daily += $coding;
+      echo $daily++;
+   }
 }

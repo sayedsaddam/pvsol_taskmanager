@@ -27,36 +27,37 @@
 	<!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:400,700,800|Roboto:400,700,900" rel="stylesheet"> -->
 </head>
 
-  <body style="background-color: #eee;">
+  <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-fixed navbar-dark unique-color-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark info-color">
       <div class="container">
-        <a class="navbar-brand" href="<?= base_url('frontend'); ?>"><strong>NirvanaBySJ</strong></a>
+        <a href="" class="navbar-brand">Saddam</a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
           aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="basicExampleNav">
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link font-weight-bold" href="#">Home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">Link 1</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="#">Link 2</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Gallery</a>
+              <a class="nav-link" href="#">Link 3</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#">Link 4</a>
             </li>
 
           </ul>
@@ -64,6 +65,8 @@
 
         </div>
         <!-- Collapsible content -->
+
       </div>
+
     </nav>
     <!--/.Navbar-->
