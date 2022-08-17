@@ -5,6 +5,7 @@ function myFunction() {
     var contact = document.getElementById("contact").value;
     // Returns successful data submission message when the entered information is stored in database.
     var dataString = 'name=' + name + '&email=' + email + '&password=' + password + '&contact=' + contact;
+    console.log(dataString);
         if (name == '' || email == '' || password == '' || contact == '') {
             alert("Please Fill All Fields");
         } else {
@@ -15,7 +16,7 @@ function myFunction() {
             data: dataString,
             cache: false,
             success: function(html) {
-            alert(html);
+                alert(html);
             }
         });
         }
