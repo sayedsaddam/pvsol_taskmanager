@@ -8,7 +8,7 @@ class Frontend extends CI_Controller{
    }
    // Index page.
    public function index(){
-      $data['title'] = 'Home | Nirvana by SJ';
+      $data['title'] = 'Home | Saddam';
       $data['content'] = 'frontend/home';
       $this->load->view('frontend/commons/template', $data);
    }
@@ -18,5 +18,11 @@ class Frontend extends CI_Controller{
       $coding++;
       $daily += $coding;
       echo $daily++;
+   }
+   // JS calculator
+   public function js_calculator(){
+      $data['title'] = 'JS Calculator | Saddam';
+      $data['content'] = 'frontend/js_calculator';
+      $this->load->view('frontend/commons/template', $data);
    }
 }

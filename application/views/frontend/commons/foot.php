@@ -22,7 +22,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3 mx-auto">
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">NirvanaBySJ</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">SayedSaddamHussain</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias ipsa aperiam, enim inventore sequi delectus sint libero repellat minima. Tenetur, doloremque vel molestias eos commodi sunt iusto officiis iste itaque.</p>
                 </div>
                 <!-- Grid column -->
@@ -31,20 +31,20 @@
                 <div class="col-md-3 mx-auto">
 
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Useful Links</h5>
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <a href="#!">privacy policy</a>
                         </li>
                         <li>
-                            <a href="#!">Link 2</a>
+                            <a href="#!">sitemap</a>
                         </li>
                         <li>
-                            <a href="#!">Link 3</a>
+                            <a href="#!">careers</a>
                         </li>
                         <li>
-                            <a href="#!">Link 4</a>
+                            <a href="#!">information</a>
                         </li>
                     </ul>
 
@@ -57,20 +57,20 @@
                 <div class="col-md-3 mx-auto">
 
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Quick Links</h5>
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <a href="#!">about</a>
                         </li>
                         <li>
-                            <a href="#!">Link 2</a>
+                            <a href="#!">services</a>
                         </li>
                         <li>
-                            <a href="#!">Link 3</a>
+                            <a href="#!">portfolio</a>
                         </li>
                         <li>
-                            <a href="#!">Link 4</a>
+                            <a href="#!">contact</a>
                         </li>
                     </ul>
 
@@ -83,20 +83,20 @@
                     <div class="col-md-3 mx-auto">
 
                         <!-- Links -->
-                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Social Links</h5>
 
                         <ul class="list-unstyled">
                             <li>
-                                <a href="#!">Link 1</a>
+                                <a href="#!">facebook</a>
                             </li>
                             <li>
-                                <a href="#!">Link 2</a>
+                                <a href="#!">twitter</a>
                             </li>
                             <li>
-                                <a href="#!">Link 3</a>
+                                <a href="#!">instagram</a>
                             </li>
                             <li>
-                                <a href="#!">Link 4</a>
+                                <a href="#!">linkedin</a>
                             </li>
                         </ul>
 

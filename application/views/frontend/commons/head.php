@@ -31,7 +31,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark info-color">
       <div class="container">
-        <a href="" class="navbar-brand font-weight-bold">Saddam</a>
+        <a href="" class="navbar-brand font-weight-bold">SaddamHussain</a>
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
           aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,20 +44,20 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="#">home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link 1</a>
+              <a class="nav-link" href="#">about</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link 2</a>
+              <a class="nav-link" href="#">services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link 3</a>
+              <a class="nav-link" href="#">portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link 4</a>
+              <a class="nav-link" href="#">contact</a>
             </li>
 
           </ul>
