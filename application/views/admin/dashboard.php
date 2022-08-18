@@ -61,7 +61,7 @@
                     <?php if($task->priority == 1){ echo '<span class="badge badge-info">Low</span>'; }elseif($task->priority == 2){ echo '<span class="badge badge-primary">Medium</span>'; }elseif($task->priority == 3){ echo '<span class="badge badge-danger">High</span>'; } ?>
                   </td>
                   <td>
-                    <?php if($task->status == 0){ echo '<span class="badge badge-warning badge-pill">Pending</span>'; }elseif($task->status == 1){ echo '<span class="badge badge-secondary badge-pill">In Progress</span>'; }else{ echo '<span class="badge badge-success badge-pill">Completed</span>'; } ?>
+                    <?php if($task->status == 'pending'){ echo '<span class="badge badge-warning badge-pill">Pending</span>'; }elseif($task->status == 'progress'){ echo '<span class="badge badge-secondary badge-pill">In Progress</span>'; }else{ echo '<span class="badge badge-success badge-pill">Completed</span>'; } ?>
                   </td>
                 </tr>
                 <?php endforeach; endif; ?>

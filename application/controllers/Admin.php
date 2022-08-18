@@ -35,6 +35,7 @@ class Admin extends CI_Controller{
             'assigner' => $this->session->userdata('id'),
             'due_date' => $this->input->post('due_date'),
             'priority' => $this->input->post('priority'),
+            'task_title' => $this->input->post('task_title'),
             'task_description' => $this->input->post('task_description')
         );
         if($this->admin_model->assign_task($data)){
@@ -93,6 +94,20 @@ class Admin extends CI_Controller{
         $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
         $this->load->view('components/template', $data);
+    }
+    // update task status
+    public function update_task_status(){
+        $id = $this->input->post('id');
+        $data = array(
+            'status' => $this->input->post('status')
+        );
+        if($this->admin_model->update_task_status($id, $data)){
+            $this->session->set_flashdata('success', '<strong>Success! </strong>Task status has been updated successfully.');
+            redirect($_SERVER['HTTP_REFERER']);
+        }else{
+            $this->session->set_flashdata('failed', '<strong>Failed! </strong>Failed to update task status, please try again!');
+            redirect($_SERVER['HTTP_REFERER']);
+        }
     }
 }
 

@@ -26,7 +26,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php if(!empty($tasks)): $serial = 1; foreach($tasks as $task): if($task->status == 2): ?>
+                <?php if(!empty($tasks)): $serial = 1; foreach($tasks as $task): if($task->status == 'completed'): ?>
                 <tr>
                   <th scope="row"><?= $serial++; ?></th>
                   <td>

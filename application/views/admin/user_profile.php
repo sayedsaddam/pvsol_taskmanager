@@ -56,10 +56,10 @@
                         </div>
                         <div class="card-body pt-0">
                             <div class="progress md-progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: <?= round($progress/$total_tasks*100, 2); ?>%" aria-valuenow="<?= round($progress/$total_tasks*100, 2); ?>" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                                </div>
-                                <p class="card-text"><?= round($progress/$total_tasks*100, 2).'% Tasks in progress.'; ?></p>
+                              <div class="progress-bar bg-info" role="progressbar" style="width: <?= round($progress/$total_tasks*100, 2); ?>%" aria-valuenow="<?= round($progress/$total_tasks*100, 2); ?>" aria-valuemin="0"
+                                  aria-valuemax="100"></div>
+                              </div>
+                              <p class="card-text"><?= round($progress/$total_tasks*100, 2).'% Tasks in progress.'; ?></p>
                         </div>
                         </div>
                     </div>
@@ -118,10 +118,10 @@
                   <td><?= ucfirst($task->task_description); ?></td>
                   <td><?= date('M d, Y', strtotime($task->due_date)); ?></td>
                   <td>
-                    <?php if($task->priority == 1){ echo '<span class="badge badge-info">Low</span>'; }elseif($task->priority == 2){ echo '<span class="badge badge-primary">Medium</span>'; }elseif($task->priority == 3){ echo '<span class="badge badge-danger">High</span>'; } ?>
+                    <?php if($task->priority == 'low'){ echo '<span class="badge badge-info">Low</span>'; }elseif($task->priority == 'medium'){ echo '<span class="badge badge-primary">Medium</span>'; }elseif($task->priority == 'high'){ echo '<span class="badge badge-danger">High</span>'; } ?>
                   </td>
                   <td>
-                    <?php if($task->status == 0){ echo '<span class="badge badge-warning badge-pill">Pending</span>'; }elseif($task->status == 1){ echo '<span class="badge badge-secondary badge-pill">In Progress</span>'; }else{ echo '<span class="badge badge-success badge-pill">Completed</span>'; } ?>
+                    <?php if($task->status == 'pending'){ echo '<span class="badge badge-warning badge-pill">Pending</span>'; }elseif($task->status == 'progress'){ echo '<span class="badge badge-secondary badge-pill">In Progress</span>'; }else{ echo '<span class="badge badge-success badge-pill">Completed</span>'; } ?>
                   </td>
                   <td><?= date('M d, Y', strtotime($task->created_at)); ?></td>
                 </tr>
