@@ -21,15 +21,17 @@
   <link href="<?= base_url('assets/css/mdb.min.css'); ?>" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="<?= base_url('assets/css/extra.css'); ?>" rel="stylesheet">
+  <!--Your custom scripts -->
+  <script src="<?= base_url('assets/js/extra.js'); ?>"></script>
   <!-- JQuery -->
   <script src="<?= base_url('assets/js/jquery.min.js'); ?>"></script>
 	<title><?php echo $title; ?></title>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:400,700,800|Roboto:400,700,900" rel="stylesheet"> -->
 </head>
-<body style="background-color: #eee;">
+<body style="background-color: #eee;" onload="startTime()">
     <!--Navbar -->
     <nav class="mb-0 navbar navbar-expand-lg navbar-dark default-color">
-      <a class="navbar-brand" href="<?= base_url('admin'); ?>">Progressive Ventures</a>
+      <a class="navbar-brand" href="<?= base_url('admin'); ?>">Task Manager</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
           aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -62,8 +64,8 @@
     </nav>
   <!--/.Navbar -->
   <div class="jumbotron jumbotron-fluid aqua-gradient text-light">
-      <div class="container">
-          <h1 class="font-weight-bolder display-4">Progressive Ventures</h1>
-          <h4>PVSol (Pvt.) Ltd. &raquo; Solar Solutions Providers.</h4>
-      </div>
+    <div class="container">
+      <h1 class="font-weight-bolder display-4">Task Manager</h1>
+      <h4>Daily tasks... <?= date('M d, Y'); ?>, <span id="clock" class="font-weight-bold text-dark"></span></h4>
+    </div>
   </div>

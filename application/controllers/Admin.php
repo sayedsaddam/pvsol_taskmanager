@@ -101,13 +101,8 @@ class Admin extends CI_Controller{
         $data = array(
             'status' => $this->input->post('status')
         );
-        if($this->admin_model->update_task_status($id, $data)){
-            $this->session->set_flashdata('success', '<strong>Success! </strong>Task status has been updated successfully.');
-            redirect($_SERVER['HTTP_REFERER']);
-        }else{
-            $this->session->set_flashdata('failed', '<strong>Failed! </strong>Failed to update task status, please try again!');
-            redirect($_SERVER['HTTP_REFERER']);
-        }
+        $this->admin_model->update_task_status($id, $data);
+        redirect($_SERVER['HTTP_REFERER']);
     }
 }
 

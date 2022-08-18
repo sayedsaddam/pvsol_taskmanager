@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
+        <div class="message"></div>
         <div class="card">
           <div class="card-header">
             <div class="row">
@@ -107,25 +108,6 @@
   </div>
 </div>
 <!-- Side Modal Top Left -->
-
 <script>
-  function update_task_status(obj, id){
-    var status = obj.value;
-    var url = '<?= base_url('admin/update_task_status'); ?>';
-    $.ajax({
-      url: url,
-      type: 'post',
-      data: {id: id, status: status},
-      success: function(data){
-        if(data == 'success'){
-          alert('Task status has been updated!');
-          setTimeout(function(){
-            window.location.reload();
-          }, 1000);
-        }else{
-          toastr.error('Something went wrong.', 'Error');
-        }
-      }
-    });
-  }
+  let base_url = '<?= base_url(); ?>';
 </script>
