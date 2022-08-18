@@ -19,7 +19,7 @@ class Admin extends CI_Controller{
         if(!empty($offset)){
             $this->uri->segment(3);
         }
-    	$data['title'] = 'Dashboard | PVSol';
+    	$data['title'] = 'Dashboard | Task Manager';
     	$data['content'] = 'admin/dashboard';
         $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
@@ -52,7 +52,7 @@ class Admin extends CI_Controller{
         if(!empty($offset)){
             $this->uri->segment(3);
         }
-        $data['title'] = 'Profile | PVSol';
+        $data['title'] = 'Profile | Task Manager';
         $data['content'] = 'admin/user_profile';
         $data['profile'] = $this->admin_model->get_user_profile($id);
         $data['users'] = $this->admin_model->get_users();
@@ -65,7 +65,7 @@ class Admin extends CI_Controller{
         if(!empty($offset)){
             $this->uri->segment(3);
         }
-        $data['title'] = 'Pending Tasks | PVSol';
+        $data['title'] = 'Pending Tasks | Task Manager';
         $data['content'] = 'admin/pending_tasks';
         $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
@@ -77,7 +77,7 @@ class Admin extends CI_Controller{
         if(!empty($offset)){
             $this->uri->segment(3);
         }
-        $data['title'] = 'In Progress Tasks | PVSol';
+        $data['title'] = 'In Progress Tasks | Task Manager';
         $data['content'] = 'admin/progress_tasks';
         $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
@@ -89,7 +89,7 @@ class Admin extends CI_Controller{
         if(!empty($offset)){
             $this->uri->segment(3);
         }
-        $data['title'] = 'Completed Tasks | PVSol';
+        $data['title'] = 'Completed Tasks | Task Manager';
         $data['content'] = 'admin/completed_tasks';
         $data['users'] = $this->admin_model->get_users();
         $data['tasks'] = $this->admin_model->get_assigned_tasks($limit, $offset);
