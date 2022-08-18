@@ -78,7 +78,9 @@ class Admin_model extends CI_Model{
                           tasks.status,
                           tasks.created_at,
                           users.id as user_id,
-                          users.username');
+                          users.username,
+                          users.fullname,
+                          users.designation');
       $this->db->from('tasks');
       $this->db->join('users', 'tasks.assignee = users.id', 'left');
       $this->db->where('tasks.assignee', $id);

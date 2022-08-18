@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login | Progressive Ventures</title>
+		<title>Login | Task Manager</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -103,8 +103,20 @@
 				</div>
 				<div class="modal-body mx-3">
 					<div class="md-form mb-5">
-						<input type="text" id="orangeForm-name" class="form-control validate">
-						<label data-error="wrong" data-success="right" for="orangeForm-name">Username</label>
+						<input name="username" type="text" id="orangeForm-username" class="form-control validate">
+						<label data-error="wrong" data-success="right" for="orangeForm-username">Username</label>
+					</div>
+					<div class="md-form mb-5">
+						<input name="fullname" type="text" id="orangeForm-name" class="form-control validate">
+						<label data-error="wrong" data-success="right" for="orangeForm-name">Full Name</label>
+					</div>
+					<div class="md-form mb-5">
+						<input name="designation" type="text" id="orangeForm-designation" class="form-control validate">
+						<label data-error="wrong" data-success="right" for="orangeForm-designation">Designation</label>
+					</div>
+					<div class="md-form mb-4">
+						<input type="password" id="orangeForm-pass" class="form-control validate">
+						<label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
 					</div>
 					<div class="md-form mb-5">
 						<select name="user_role" class="browser-defaul custom-select">
@@ -112,10 +124,6 @@
 							<option value="admin">Admin</option>
 							<option value="staff">Staff</option>
 						</select>
-					</div>
-					<div class="md-form mb-4">
-						<input type="password" id="orangeForm-pass" class="form-control validate">
-						<label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
 					</div>
 				</div>
 				<div class="modal-footer d-flex justify-content-center">

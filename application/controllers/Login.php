@@ -72,7 +72,7 @@ class Login extends CI_Controller
           echo "I am an Employee.";
         }
       }else{
-        $this->session->set_flashdata('login_error', '<strong>Aww snap! </strong>Username or password is incorrect.');
+        $this->session->set_flashdata('login_error', '<strong>Aww snap! </strong>Username / password is incorrect or your account has not yet activated.');
         redirect($_SERVER['HTTP_REFERER']);
       }
     }

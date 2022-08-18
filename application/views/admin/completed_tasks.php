@@ -44,11 +44,11 @@
                     <form action="<?= base_url('admin/update_task_status'); ?>" method="post" class="team_assign">
                       <input type="hidden" name="employee_id" class="id" value="<?= $task->id; ?>">
                       <select name="id" class="form-control form-control-sm update_task_status" onchange="update_task_status(this, '<?= $task->id; ?>')">
-                          <option value="" disabled selected>Task Status</option>
-                          <option value="pending" <?= $task->status == 'pending' ? 'selected' : ''; ?>>Pending</option>
-                          <option value="progress" <?= $task->status == 'progress' ? 'selected' : ''; ?>>Progress</option>
-                          <option value="completed" <?= $task->status == 'completed' ? 'selected' : ''; ?>>Completed</option>
-                        </select>
+                        <option value="" disabled selected>Task Status</option>
+                        <option value="pending" <?= $task->status == 'pending' ? 'selected' : ''; ?>>Pending</option>
+                        <option value="progress" <?= $task->status == 'progress' ? 'selected' : ''; ?>>Progress</option>
+                        <option value="completed" <?= $task->status == 'completed' ? 'selected' : ''; ?>>Completed</option>
+                      </select>
                     </form>
                   </td>
                 </tr>

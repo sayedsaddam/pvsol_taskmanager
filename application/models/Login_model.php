@@ -16,7 +16,7 @@ class Login_model extends CI_Model
     {
     	$this->db->select('id, username, password, user_role, otp');
     	$this->db->from('users');
-		$this->db->where(array('username' => $username, 'password' => $password));
+		$this->db->where(array('username' => $username, 'password' => $password, 'user_status' => 1));
 		$query = $this->db->get();
 		if($query->num_rows() == 0)
 			return false;
