@@ -28,7 +28,7 @@ class Login extends CI_Controller
     //     $this->db->where('email', $user_email);
     //     $this->db->update('users', $data);
     //     $this->load->library('email'); // Loading the email library.
-    //     $this->email->from('no-reply@alhayyatgroup.com', 'AH Group');
+    //     $this->email->from('no-reply@domain.com', 'AH Group');
     //     $this->email->to($email->email);
     //     // $this->email->cc('another@another-example.com');
     //     // $this->email->bcc('them@their-example.com');
