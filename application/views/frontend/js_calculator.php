@@ -1,6 +1,6 @@
-<div class="container m-5">
-   <div class="row justify-content-center">
-      <div class="col-md-6 offset-md-3">
+<div class="container m-5" onload="displayTime()">
+   <div class="row">
+      <div class="col-md-6">
          <h1 class="font-weight-bold">Calculator in JS</h1>
          <table class="">
             <tr>
@@ -33,6 +33,38 @@
             </div>
          </table>
       </div>
+      <div class="col-md-6 text-right">
+         <div id="time">
+            <?php //define("MINSIZE", 50); echo MINSIZE.', '; echo constant("MINSIZE"); ?>
+            <?php
+               interface Animal{
+                  public function makeSound();
+               }
+               class Cat implements Animal{
+                  public function makeSound(){
+                     echo 'Meow ';
+                  }
+               }
+               class Dog implements Animal{
+                  public function makeSound(){
+                     echo 'Bark ';
+                  }
+               }
+               class Mouse implements Animal{
+                  public function makeSound() {
+                     echo 'Squeak';
+                  }
+               }
+               $cat = new Cat();
+               $dog = new Dog();
+               $mouse = new Mouse();
+               $animals = array($cat, $dog, $mouse);
+               foreach($animals as $animal){
+                  $animal->makeSound();
+               }
+            ?>
+         </div>
+      </div>
    </div>
 </div>
 
@@ -50,4 +82,33 @@
    function clearScreen(){
       document.getElementById('result').value = "";
    }
+
+   // json.parse
+   // let userInfo = '{"name":"Saddam", "country":"Pakistan", "age": 25}';
+   // let userInfoObj = JSON.parse(userInfo);
+   // let userInfoStr = JSON.stringify(userInfoObj);
+   // console.log(userInfoObj);
+   // console.log(userInfoStr);
+
+   //setInterval(() => console.log("Hi"), 1000); // Will display Hi every 1 second.
+   // const displayTime = () => {
+   //    let date = new Date();
+   //    let time = date.toLocaleTimeString();
+   //    console.log(time);
+   // };
+   // let ineterval = setInterval(displayTime, 3000);
+   // document.getElementById('time').innerHTML = interval;
+
+   // const add = (a, b) => {
+   //    console.log(a + b);
+   // }
+   // setInterval(add, 3000, 5, 10);
+   let count = 0;
+   let id = setInterval(function(){
+      console.log(count);
+      count = count + 1;
+      if(count > 10){
+         clearInterval(id);
+      }
+   }, 1000);
 </script>
