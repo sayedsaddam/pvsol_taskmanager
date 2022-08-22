@@ -25,4 +25,8 @@ class Frontend extends CI_Controller{
       $data['content'] = 'frontend/js_calculator';
       $this->load->view('frontend/commons/template', $data);
    }
+   // Web scraping in PHP
+   public function web_scraping(){
+      $this->load->view('frontend/web_scraping');
+   }
 }

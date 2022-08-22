@@ -37,6 +37,22 @@
          <div id="time">
             <?php //define("MINSIZE", 50); echo MINSIZE.', '; echo constant("MINSIZE"); ?>
             <?php
+               $url = "https://facebook.com/?search=saddam";
+               $email = 'xyz@gmail.com';
+               // echo $filteredEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+               echo filter_var($email, FILTER_VALIDATE_EMAIL) ? $email = 'valid email <br>' : $email = 'invalid email <br>';
+               echo filter_var($url, FILTER_VALIDATE_URL) ? $url = 'valid url' : $url = 'invalid url';
+               // array_chunk in php
+               // array array_chunk($array, $size, $preserve_keys); // $preserve_keys -> Boolean value (True / False)
+               $input_array = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
+               echo '<pre>'; print_r(array_chunk($input_array, 3)); echo '</pre>';
+               function change_case($in_array){
+                  return (array_change_key_case($in_array, CASE_UPPER)); // default is lowercase
+               }
+               $array = array('Saddam' => 90, 'Dawood' => 85, 'Wahid' => 80);
+               print_r(change_case($array));
+            ?>
+            <?php
                interface Animal{
                   public function makeSound();
                }
@@ -62,12 +78,150 @@
                foreach($animals as $animal){
                   $animal->makeSound();
                }
+               // classes and objects
+               class Fruit{
+                  // properties
+                  public $name;
+                  public $color;
+                  // methods
+                  function set_name($name){
+                     $this->name = $name;
+                  }
+                  function get_name(){
+                     return $this->name;
+                  }
+                  function set_color($color){
+                     $this->color = $color;
+                  }
+                  function get_color(){
+                     return $this->color;
+                  }
+               }
+               $apple = new Fruit();
+               $banana = new Fruit();
+               $banana->set_name('Banana');
+               $banana->set_color('Yellow');
+               $apple->set_name('Apple');
+               $apple->set_color('Red');
+               echo '<br>';
+               echo $apple->get_name().' is '.$apple->get_color().'<br>';
+               echo $banana->get_name().' is '.$banana->get_color().'<br>';
+               // $this keyword
+               class Person{
+                  public $name;
+                  function set_name($name){
+                     $this->name = $name;
+                  }
+               }
+               $person = new Person();
+               $person->set_name('Saddam ');
+               echo $person->name;
+               // outside the class (by changin the value of the property)
+               class Age{
+                  public $age;
+               }
+               $age = new Age();
+               $age->age = 29;
+               echo $age->age;
+               // constructors in PHP
+               class Car{
+                  public $name;
+                  public $color;
+                  function __construct($name, $color){
+                     $this->name = $name;
+                     $this->color = $color;
+                  }
+                  function __destruct() {
+                     echo "The car is {$this->name} and the color is {$this->color}";
+                  }
+                  function get_name(){
+                     return $this->name;
+                  }
+                  function get_color(){
+                     return $this->color;
+                  }
+               }
+               $car = new Car('Toyota', 'Red');
+               // $car = new Car('Toyota', 'Black');
+               // echo '<br>'.$car->get_name().' is '.$car->get_color().'<br>';
+               // Access modifiers in PHP
+               class Mobile{
+                  public $name;
+                  protected $model;
+                  private $serial;
+                  public function set_name($n){ // public function
+                     $this->name = $n;
+                  }
+                  function get_name(){
+                     return $this->name;
+                  }
+                  protected function set_model($n){ // protected function
+                     $this->model = $n;
+                  }
+                  private function set_serial($n){ // private function
+                     $this->serial = $n;
+                  }
+               }
+               $phone = new Mobile();
+               $phone->set_name('Samsung');
+               echo '<br>'.$phone->get_name();
+               // $phone->set_model('S22 Ultra');
+               // $phone->set_serial('123242342');
             ?>
          </div>
       </div>
    </div>
 </div>
-
+<?php
+   // array column in php
+   // array array_column($array, $column_key, $index_key = null);
+   echo "Array column in PHP<br>";
+   function column($details){
+      $rec = array_column($details, 'hobby');
+      return $rec;
+   }
+   $array = array(
+      array('name' => 'Saddam', 'roll' => 1, 'hobby' => 'Coding'),
+      array('name' => 'Ihsan', 'roll' => 2, 'hobby' => 'Cicket'),
+      array('name' => 'Dawood', 'roll' => 3, 'hobby' => 'Football'),
+      array('name' => 'Wahid', 'roll' => 4, 'hobby' => 'Tennis'),
+   );
+   echo '<pre>'; print_r(column($array)); echo '</pre>';
+   // array_combine in php
+   // array array_combine($keys, $values);
+   echo "Array combine in PHP<br>";
+   function combine($keys, $values){
+      return (array_combine($keys, $values));
+   }
+   $array1 = array('Saddam', 'Ihsan', 'Dawood', 'Wahid');
+   $array2 = array('29', '25', '27', '26');
+   echo '<pre>'; print_r(combine($array1, $array2)); echo '</pre>';
+   // array_count_values in php
+   // array array_count_values($array);
+   echo "Array count values in PHP<br>";
+   function count_values($array){
+      return (array_count_values($array));
+   }
+   $array = array('Saddam', 'Ihsan', 'Ihsan', 'Dawood', 'Wahid', 'Saddam', 'Ihsan', 'Dawood', 'Wahid');
+   echo '<pre>'; print_r(count_values($array)); echo '</pre>';
+   // array diff in php
+   // array_diff($array1, $array2, $array3, .... $arrayn)
+   echo "Array difference in PHP<br>";
+   function difference($array1, $array2, $array3){
+      return (array_diff($array1, $array2, $array3));
+   }
+   $array1 = array('a', 'b', 'c', 'd', 'e', 'f');
+   $array2 = array('a', 'b', 'g', 'h');
+   $array3 = array('a', 'f', 'i');
+   echo '<pre>'; print_r(difference($array1, $array2, $array3)); echo '</pre>';
+   
+   // array_diff_assoc in php
+   echo 'array_diff_assoc() in PHP<br>'; 
+   $arr1 = array('10' => 'Saddam', '12' => 'Dawood', '11' => 'Wahid', '20' => 'Aizaz', '18' => 'Ihsan');
+   $arr2 = array('21' => 'Awais', '22' => 'Shakir', '23' => 'Umer');
+   $arr3 = array('31' => 'Fahad', '32' => 'Wahab', '33' => 'Afzaal');
+   echo '<pre>'; print_r(array_diff_assoc($arr1, $arr2, $arr3)); echo '</pre>';
+?>
 <script>
    function display(val){
       document.getElementById('result').value += val;
