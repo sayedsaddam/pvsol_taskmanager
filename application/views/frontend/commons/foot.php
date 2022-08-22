@@ -109,8 +109,8 @@
             </div>
             <!-- Footer Links -->
             <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2018 Copyright:
-                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+            <div class="footer-copyright text-center py-3">© <?= date('Y'); ?> Copyright:
+                <a target="_blank" href="http://losers.epizy.com/profile/"> SaddamInc</a>
             </div>
             <!-- Copyright -->
         </footer>
