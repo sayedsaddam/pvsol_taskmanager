@@ -215,12 +215,44 @@
    $array3 = array('a', 'f', 'i');
    echo '<pre>'; print_r(difference($array1, $array2, $array3)); echo '</pre>';
    
-   // array_diff_assoc in php
+   // array_diff_assoc() in php
    echo 'array_diff_assoc() in PHP<br>'; 
    $arr1 = array('10' => 'Saddam', '12' => 'Dawood', '11' => 'Wahid', '20' => 'Aizaz', '18' => 'Ihsan');
    $arr2 = array('21' => 'Awais', '22' => 'Shakir', '23' => 'Umer');
    $arr3 = array('31' => 'Fahad', '32' => 'Wahab', '33' => 'Afzaal');
    echo '<pre>'; print_r(array_diff_assoc($arr1, $arr2, $arr3)); echo '</pre>';
+
+   // array_diff_key() in php
+   echo 'array_diff_key() in PHP<br>';
+   $ar1 = array('10' => 'Saddam', '20' => 'Dawood', '30' => 'Wahid', '40' => 'Ihsan', '50' => 'Wahab');
+   $ar2 = array('10' => 'Afzaal', '70' => 'Parizad', '30' => 'Ali', '80' => 'Haadi');
+   $ar3 = array('30' => 'Abdul', '80' => 'Khan');
+   echo '<pre>'; print_r(array_diff_key($ar1, $ar2, $ar3)); echo '</pre>';
+
+   // array_diff_uassoc() in php, example 1
+   echo 'array_diff_uassoc() in PHP, example 1<br>';
+   function user_function($a, $b){
+      if($a === $b){
+         return 1;
+      }
+      return ($a > $b) ? 1 : 0;
+   }
+   $a1 = array('10' => 'Saddam', '20' => 'Aziz', '30' => 'Ijaz');
+   $a2 = array('20' => 'Saddam', '10' => 'Aziz', '30' => 'Ijaz');
+   echo '<pre>'; print_r(array_diff_uassoc($a1, $a2, 'user_function')); echo '</pre>';
+
+   // array_diff_uassoc() in php, example 2
+   echo 'array_diff_uassoc() in PHP, example 2<br>';
+   function user_function2($a, $b){
+      if($a === $b){
+         return 0;
+      }
+      return ($a > $b) ? 1 : -1;
+   }
+   $a1 = array(array("a" => "green", "b" => "yellow", "c" => "white", "black"), "b" => "brown", "c" => "blue", "red");
+   $a2 = array(array("a" => "green", "b" => "yellow", "white", "d" => "black"), "yellow", "red");
+   $result = array_diff_uassoc($a1[0], $a2[0], 'user_function2');
+   echo '<pre>'; print_r($result); echo '</pre>';
 ?>
 <script>
    function display(val){
