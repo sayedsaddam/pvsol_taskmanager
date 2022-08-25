@@ -37,6 +37,13 @@
          <div id="time">
             <?php //define("MINSIZE", 50); echo MINSIZE.', '; echo constant("MINSIZE"); ?>
             <?php
+               $a = 5;
+               $b = 6;
+               $a = $a + $b;
+               $b = $a - $b;
+               $a = $a - $b;
+               // list($a, $b) = array($b, $a);
+               echo 'value of a '.$a .', '. ' value of b '.$b.'<br>';
                $url = "https://facebook.com/?search=saddam";
                $email = 'xyz@gmail.com';
                // echo $filteredEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
