@@ -29,4 +29,8 @@ class Frontend extends CI_Controller{
    public function web_scraping(){
       $this->load->view('frontend/web_scraping');
    }
+   // Interview prep
+   public function interview(){
+      $this->load->view('frontend/web_scraping');
+   }
 }
