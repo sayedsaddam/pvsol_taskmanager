@@ -1,5 +1,8 @@
 <?php 
 namespace Html;
+
+use Iterator;
+
 // $ch = curl_init();
 // curl_setopt($ch, CURLOPT_URL, 'https://www.ahgroup-pk.com/');
 // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -205,8 +208,157 @@ $apple = new Fruit();
 
 $banana = new Fruit();
 $apple->set_name('Apple');
+echo '<br> Is "$apple" the instance of class Fruit? <br>';
+echo $apple instanceof Fruit ? 'Ans. Yes' : 'Ans. No';
+echo '<br>';
 $apple->set_color('Red');
 $banana->set_color('Yellow');
 $banana->set_name('Banana');
 echo $apple->get_name().' and it\'s color is ' .$apple->get_color(). '<br>';
 echo $banana->get_name().' and it\'s color is '.$banana->get_color();
+echo '<br>';
+
+$str = "Datum";
+$$str = " IT Services";
+echo "$str ${$str} <br>";
+echo "$Datum <br>";
+echo '<br>';
+
+   function test1($n) {
+      $n = $n + 10;
+   }
+    
+   $m=5;
+   test1($m);
+   echo $m.', ';
+
+   function test2(&$n) {
+      $n = $n + 10;
+   }
+   $m=5;
+   test2($m);
+   echo $m.'<br>';
+
+// PHP Iterables
+echo 'PHP Iterables. <br>';
+function printIterable(iterable $myIterable){
+   foreach($myIterable as $item){
+      echo $item;
+   }
+}
+$array = ['a', 'b', 'c'];
+printIterable($array);
+
+echo '<br>';
+function getIterable(): iterable{
+   return ['a', 'b', 'c', 'd'];
+}
+$iterable = getIterable();
+foreach($iterable as $item){
+   echo $item.', ';
+}
+
+echo '<br>';
+// create an iterator
+class MyIterator implements Iterator{
+   private $items = [];
+   private $pointer = 0;
+   public function __construct($items){
+      // array_values() make sure that the keys are number
+      $this->items = array_values($items);
+   }
+   public function current(){
+      return $this->items[$this->pointer];
+   }
+   public function key(){
+      return $this->pointer;
+   }
+   public function next(){
+      $this->pointer++;
+   }
+   public function rewind(){
+      $this->pointer = 0;
+   }
+   public function valid(){
+      // count() indicates how many items are in the list
+      return $this->pointer < count($this->items);
+   }
+}
+// a function that uses iterables
+function printItems(iterable $iterable){
+   foreach($iterable as $item){
+      echo $item.', ';
+   }
+}
+// use iterator as an iterable
+$iterator = new MyIterator(['a', 'b', 'c', 'd', 'e']);
+printItems($iterator);
+
+// $x = 6; // global scope
+// function myTest(){
+//    // using $x inside this function will generate an error
+//    //$x = 5; // local scope
+//    // global $x; // Using global keyword to access the global variable inside the function
+//    echo "<p>Variable x inside function is: $x</p>";
+// }
+// myTest();
+// echo "<p>Variable x outside function is: $x</p>";
+
+$x = 5;
+$y = 10;
+
+function myTest() {
+  global $x, $y;
+  $y = $x + $y;
+} 
+
+myTest();  // run function
+echo $y; // output the new value for variable $y
+echo '<br>';
+$str = 'I am Saddam from Swat, KP.';
+$key = '12345678901234567890';
+$cipher = 'AES-128-CTR';
+$ivLen = openssl_cipher_iv_length($cipher);
+$iv = openssl_random_pseudo_bytes(16);
+$options = 0;
+echo openssl_encrypt($str, $cipher, $key, $options, $iv);
+echo "<br>";
+// find whether number is odd or even in php >> Modulo method (%)
+function even_or_odd($number){
+   if($number % 2 == 0){
+      echo 'Even';
+   }else{
+      echo 'Odd';
+   }
+}
+even_or_odd(45);
+echo '<br>';
+// Recursive method
+function check($number){
+   if($number == 0)
+      return 1;
+   elseif($number == 1)
+      return 0;
+   elseif($number < 0)
+      return check(-$number);
+   else
+      return check($number - 2);
+}
+$number = 40;
+if(check($number)){
+   echo 'Even';
+}else{
+   echo 'Odd';
+}
+?>
+<script>
+   for(let w = 0; w < 16; w++){
+      if(w % 2 == 0) continue;
+      console.log(w);
+   }
+   for(let y = 0; y < 16; y++){
+      if(y % 2 == 0){
+         console.log(y);
+      }
+   }
+</script>
