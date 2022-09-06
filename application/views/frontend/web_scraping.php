@@ -19,7 +19,6 @@ use Iterator;
 //    abstract public function someMehtod2($name, $color);
 //    abstract public function someMethod3() : string;
 // }
-
 //abstract class example 1.
 abstract class ParentClass{
    // Abstract method with an argument
@@ -351,6 +350,18 @@ if(check($number)){
    echo 'Odd';
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JS Timeout</title>
+</head>
+<body>
+   <div class="divClass"></div>
+</body>
+</html>
 <script>
    for(let w = 0; w < 16; w++){
       if(w % 2 == 0) continue;
@@ -361,4 +372,19 @@ if(check($number)){
          console.log(y);
       }
    }
+   // Timeout
+   const time = () => {
+      setTimeout(() => {
+         const select = document.querySelector('.divClass');
+         select.innerHTML = '2 seconds later...';
+      }, 2000);
+   };
+   time();
+
+   const handleShowAlert = () => {
+      setShowAlert(true);
+      setTimeout(() => {
+         setShowAlert(false);
+      }, 3000);
+   };
 </script>
