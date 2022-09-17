@@ -349,6 +349,11 @@ if(check($number)){
 }else{
    echo 'Odd';
 }
+
+// Add years to current date
+echo '<br>';
+$newDate = date('Y-m-d', strtotime('+4 years'));
+echo $newDate;
 ?>
 <!DOCTYPE html>
 <html lang="en">
